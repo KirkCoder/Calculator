@@ -35,13 +35,12 @@ class InputCalculatorFragment: Fragment(), MainView {
     private lateinit var input: EditText
     private lateinit var calculateBtn: Button
     private lateinit var errorMsg: String
-    private var presenter: MainPresenter? = null
+    private var presenter: MainPresenter? = MainPresenter()
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         retainInstance = true
-        presenter = MainPresenter()
         return inflater.inflate(R.layout.input_calculator_fragment, container, false)
     }
 

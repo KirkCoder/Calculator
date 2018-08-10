@@ -41,6 +41,7 @@ class MainPresenter {
         private const val ZERO = "0"
         private const val FIRST_INDEX = 0
         private const val STANDARD_PRIORITY = 1
+        private const val MORE_THEN_ONE_ELEMENT = 1
         private const val HIGH_PRIORITY = 2
         private const val SCALE = 2
         private const val NO_SPACE = ""
@@ -79,6 +80,9 @@ class MainPresenter {
             out.addLast(stack.pop())
             calculate(out)
         }
+
+        if (out.size > MORE_THEN_ONE_ELEMENT) throw NotValidInputException()
+
         return out.last
     }
 
