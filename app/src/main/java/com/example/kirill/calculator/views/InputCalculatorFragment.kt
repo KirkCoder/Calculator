@@ -72,11 +72,6 @@ class InputCalculatorFragment: Fragment(), MainView {
         calculateBtn = view.findViewById(R.id.btn)
     }
 
-    override fun onDestroyOptionsMenu() {
-        presenter = null
-        super.onDestroyOptionsMenu()
-    }
-
     override fun showError(){
         if (view != null){
             Snackbar.make(view!!, errorMsg, Snackbar.LENGTH_LONG).show()
