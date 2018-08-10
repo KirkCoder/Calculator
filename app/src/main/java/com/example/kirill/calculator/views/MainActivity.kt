@@ -14,7 +14,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         findViews()
+    }
+
+    override fun onStart() {
         setFragment()
+        super.onStart()
+    }
+
+    override fun onStop() {
+        fragment = null
+        super.onStop()
     }
 
     private fun setFragment() {
